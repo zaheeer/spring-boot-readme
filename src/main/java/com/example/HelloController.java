@@ -37,7 +37,7 @@ public class HelloController {
         HttpEntity<PostRequestBody> requestEntity = new HttpEntity<>(postRequestBody, headers);
 
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> responseEntity = restTemplate.postForEntity("https://jsonplaceholder.typicode.com/posts", requestEntity, String.class);
+        ResponseEntity<String> responseEntity = restTemplate.postForEntity(JSON_PLACEHOLDER_URL, requestEntity, String.class);
 
         return ResponseEntity.ok(responseEntity.getBody());
     }
