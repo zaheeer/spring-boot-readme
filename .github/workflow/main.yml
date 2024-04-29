@@ -1,1 +1,23 @@
+name: Sync OpenAPI definition to ReadMe
 
+# Run workflow for every push to the `main` branch
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+
+     # V1 vsrsion APIs
+      # 1. Run GitHub Action to sync OpenAPI file at ./path-to-file.json
+      - name: GitHub Action
+        # We recommend specifying a fixed version, i.e. @v8
+        # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
+        uses: readmeio/rdme@v8
+        with:
+          rdme: openapi ./src/main/resources/swagger --key=rdme_xn8s9hddb3075a68b844cb2039547583a5aeb614d8b1348552d84a7f4982bcff2114de --id=662f73053f8c5a006eed2adb
