@@ -52,6 +52,65 @@
           }
         }
       }
+    },
+    "/posts": {
+      "post": {
+        "summary": "Create a new post",
+        "requestBody": {
+          "description": "PostRequestBody object that contains post details",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostRequestBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "PostRequestBody": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "The ID of the post"
+          },
+          "title": {
+            "type": "string",
+            "description": "The title of the post"
+          },
+          "body": {
+            "type": "string",
+            "description": "The content of the post"
+          },
+          "userId": {
+            "type": "integer",
+            "description": "The ID of the user"
+          }
+        },
+        "example": {
+          "id": 1,
+          "title": "Sample Title",
+          "body": "Sample Content",
+          "userId": 1
+        }
+      }
     }
   }
 }
