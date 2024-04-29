@@ -51,9 +51,7 @@
             }
           }
         }
-      }
-    },
-    "/posts": {
+      },
       "post": {
         "summary": "Create a new post",
         "requestBody": {
@@ -112,5 +110,9 @@
         }
       }
     }
+  },
+  "x-readme": {
+    "explorer-enabled": true,
+    "proxy-enabled": true
   }
 }
