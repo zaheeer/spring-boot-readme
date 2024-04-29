@@ -17,7 +17,7 @@
     },
     "/posts": {
       "get": {
-        "summary": "Retrieve posts from JSONPlaceholder",
+        "summary": "Retrieve posts from JSONPlaceholder Get Call",
         "responses": {
           "200": {
             "description": "OK",
