@@ -1,0 +1,57 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Sample API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Check server health",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/posts": {
+      "get": {
+        "summary": "Retrieve posts from JSONPlaceholder",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "userId": {
+                        "type": "integer",
+                        "description": "The user ID"
+                      },
+                      "id": {
+                        "type": "integer",
+                        "description": "The post ID"
+                      },
+                      "title": {
+                        "type": "string",
+                        "description": "The post title"
+                      },
+                      "body": {
+                        "type": "string",
+                        "description": "The post content"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
